@@ -1,31 +1,131 @@
-# **PhishNet - AI-Powered Real-Time Phishing Protection** 🛡️🎣  
+# PhishNet: AI-Powered Real-Time Phishing Protection
 
-**PhishNet** is a browser extension that leverages **Google Gemini AI** to detect and block phishing websites in real time. Stay protected while browsing with AI-driven security that analyzes URLs, webpage content, and suspicious elements to prevent phishing attacks before they happen.  
+PhishNet is a browser extension and backend service that uses Google's Gemini AI to provide real-time protection against phishing attacks by analyzing URLs and webpage content.
 
-## 🚀 **Features**  
+## Features
 
-✅ **Real-Time Phishing Detection** – Uses AI to analyze web pages and flag potential phishing sites.  
-✅ **Google Gemini Integration** – Leverages advanced AI to detect evolving phishing techniques.  
-✅ **Instant Alerts** – Get notified when visiting a suspicious site.  
-✅ **User-Friendly UI** – Seamless browser extension with a simple interface.  
-✅ **Lightweight & Fast** – No heavy processing, works efficiently in the background.  
+- **Real-time URL Analysis**: Analyzes URLs before you visit them
+- **Content-based Detection**: Evaluates webpage content to detect phishing attempts
+- **AI-Powered Analysis**: Leverages Google Gemini AI for sophisticated detection
+- **User-friendly Warnings**: Clear alerts when phishing is detected
+- **Customizable Protection**: Adjustable protection levels
+- **Feedback System**: Users can report false positives/negatives
 
-### 🔧 **Tech Stack**  
+## Project Structure
 
-- **Frontend**: JavaScript, React  
-- **Backend**: Node.js  
-- **AI Model**: Google Gemini  
-- **Database**: Firebase  
-- **Browser Extension**: Manifest V3 (Chrome, Firefox, Edge)  
+The project is divided into two main components:
 
-### 📌 **How It Works**  
+### Frontend (Browser Extension)
 
-1. PhishNet scans URLs in real time as you browse.  
-2. Google Gemini AI analyzes page content and structure.  
-3. If a site is identified as a phishing attempt, a warning is displayed.  
-4. Users can report false positives or confirm detections to improve AI accuracy.  
+- User interface for the browser extension
+- Real-time scanning of webpages
+- Warning displays for detected threats
 
-### 🏆 **Why PhishNet?**  
-Phishing attacks are becoming more sophisticated, and traditional rule-based detection isn’t enough. **PhishNet** provides **AI-powered, adaptive security**, keeping you safe from new and evolving threats.  
+### Backend (Express.js Server)
 
-🔗 **[Coming Soon: Installation Guide & Demo]**  
+- API endpoints for phishing analysis
+- Google Gemini AI integration
+- Firebase data storage for analysis results
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (v14+)
+- npm or yarn
+- Google Chrome or compatible browser
+- Google Gemini API key
+- Firebase project (optional, for storing analytics)
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+   ```
+   cd backend
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Create a .env file based on .env.example and add your Gemini API key:
+   ```
+   cp .env.example .env
+   # Edit the .env file to add your credentials
+   ```
+
+4. Start the server:
+   ```
+   npm run dev
+   ```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Build the extension:
+   ```
+   npm run build
+   ```
+
+4. Load the extension in your browser:
+   - Open Chrome and navigate to `chrome://extensions/`
+   - Enable "Developer mode"
+   - Click "Load unpacked" and select the `dist` folder from the frontend directory
+
+## Usage
+
+1. The PhishNet icon will appear in your browser toolbar
+2. Click the icon to access settings and view protection status
+3. Browse the web normally - PhishNet will alert you when it detects a potential phishing site
+4. Provide feedback on detections to help improve the system
+
+## Development
+
+### Frontend Development
+
+```
+cd frontend
+npm run dev
+```
+
+This will watch for changes and rebuild the extension automatically.
+
+### Backend Development
+
+```
+cd backend
+npm run dev
+```
+
+This will start the server with nodemon for auto-reloading.
+
+## Technologies Used
+
+- **Frontend**: JavaScript, Chrome Extension API
+- **Backend**: Node.js, Express.js
+- **AI**: Google Gemini AI
+- **Database**: Firebase Firestore
+- **Build Tools**: Webpack, Babel
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Google Gemini AI for powering the detection engine
+- Firebase for data storage capabilities
